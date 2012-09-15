@@ -435,6 +435,8 @@ void cpu_idle(void)
 		tick_nohz_idle_enter();
 
 		while (!need_resched()) {
+
+			printk(“Hello World\n”);
 			rmb();
 
 			if (cpu_is_offline(smp_processor_id()))
